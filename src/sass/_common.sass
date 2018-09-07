@@ -1,5 +1,61 @@
 body
 	background: #FFF
-	+css-lock(16, 50, 600, 1000)
+	font-size: 14px
 	line-height: 1.4
 
+
+.triangle-slider
+	height: 600px
+	width: 900px
+	position: relative
+	overflow: hidden
+	z-index: 1
+	$this: &
+
+	&__piece
+		position: absolute
+		// width: 100%
+		overflow: hidden
+		left: -50px
+		right: -50px
+		&:nth-child(1)
+			height: 50%
+			z-index: 1
+			#{$this}__image
+				background-position: center 0
+		&:nth-child(2)
+			height: 50%
+			top: 25%
+			bottom: 25%
+			transform: rotate(-10deg)
+			width: auto
+			z-index: 2
+			#{$this}__image
+				background-position: center -50px
+				transform: rotate(10deg)
+		&:nth-child(3)
+			bottom: 0
+			height: 50%
+			z-index: 1
+			#{$this}__image
+				background-position: center -200px
+
+	&__wrapper
+		height: 100%
+
+	&__slide
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		&:nth-child(2)
+			transform: translateX(100%)
+	&__image
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-size: cover
+		background-repeat: no-repeat
