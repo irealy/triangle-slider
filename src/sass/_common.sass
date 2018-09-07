@@ -22,6 +22,7 @@ body
 			height: 50%
 			z-index: 1
 			#{$this}__image
+				bottom: -100%
 				background-position: center 0
 		&:nth-child(2)
 			height: 50%
@@ -31,14 +32,17 @@ body
 			width: auto
 			z-index: 2
 			#{$this}__image
-				background-position: center -50px
+				top: -50%
+				background-position: center center
+				bottom: -50%
 				transform: rotate(10deg)
 		&:nth-child(3)
 			bottom: 0
 			height: 50%
 			z-index: 1
 			#{$this}__image
-				background-position: center -200px
+				top: -100%
+				background-position: center 0
 
 	&__wrapper
 		height: 100%
